@@ -3,19 +3,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.util.logging.Logger;
 
 public class Client {
     private Socket clientSocket;
     private PrintWriter out;
     private BufferedReader in;
-
-    public static void main(String[] args){
-        try {
-            startConnection("mail01.heig-vd.ch",  25);
-        } catch (IOException e){
-            e.printStackTrace();
-        }
-    }
 
     public void startConnection(String ip, int port) throws IOException {
         clientSocket = new Socket(ip, port);
@@ -23,10 +16,12 @@ public class Client {
         in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
     }
 
-    public String sendMessage(String msg) throws IOException {
+    public void sendMessage(String msg) throws IOException {
         out.println(msg);
-        String resp = in.readLine();
-        return resp;
+        String resp;
+        while((resp = in.readLine()) != null){
+            System.out.println(resp);
+        }
     }
 
     public void stopConnection() throws IOException {
