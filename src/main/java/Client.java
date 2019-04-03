@@ -3,11 +3,13 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.util.ArrayList;
 
 public class Client {
     private Socket clientSocket;
     private PrintWriter out;
     private BufferedReader in;
+
     private final String CRLF = "\r\n";
 
     public void startConnection(String ip, int port) throws IOException {
