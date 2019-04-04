@@ -9,7 +9,8 @@ public class GroupTest {
     @Test
     public void groups() {
         EmailList emailList = new EmailList("emailsExample.txt");
-        ArrayList<Group> groups = Group.createGroups(10, emailList);
+        MessageList messageList = new MessageList("messagesExample.txt");
+        ArrayList<Group> groups = Group.createGroups(10, emailList, messageList);
 
         for(Group group : groups) {
             ArrayList<String> recipients = group.getRecipients();

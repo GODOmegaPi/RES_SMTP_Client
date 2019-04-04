@@ -21,7 +21,7 @@ public class Application {
             return;
         }
 
-        ArrayList<Group> groups = Group.createGroups(groupNb, new EmailList("emailsExample.txt"));
+        ArrayList<Group> groups = Group.createGroups(groupNb, new EmailList(emailsPath), new MessageList(messagesPath));
 
         System.out.println("Les groupes :");
         System.out.println(groups);

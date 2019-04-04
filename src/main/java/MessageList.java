@@ -26,7 +26,7 @@ public class MessageList {
                     // reset message
                     message = "";
                 } else {
-                    message += line;
+                    message += line + "\n";
                 }
            }
         } catch (IOException e) {
