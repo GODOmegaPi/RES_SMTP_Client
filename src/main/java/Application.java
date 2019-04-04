@@ -7,6 +7,8 @@ public class Application {
 
     public static void main(String[] args) {
         String emailsPath = "emailsExample.txt";
+        String messagesPath = "messagesExample.txt";
+
         EmailList emailList = new EmailList(emailsPath);
 
         int groupNb = Integer.parseInt(args[0]);
@@ -21,6 +23,7 @@ public class Application {
 
         ArrayList<Group> groups = Group.createGroups(groupNb, new EmailList("emailsExample.txt"));
 
+        System.out.println("Les groupes :");
         System.out.println(groups);
 
         /*try {
