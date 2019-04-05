@@ -3,14 +3,14 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Group {
-    private String message;
+    private Message message;
     private String sender;
     private ArrayList<String> recipients = new ArrayList<String>();
 
     public static ArrayList<Group> createGroups(int nbGroup, EmailList emailList, MessageList messageList) {
         ArrayList<Group> groups = new ArrayList<Group>();
         ArrayList<String> emails = emailList.getEmails();
-        ArrayList<String> messages = messageList.getMessages();
+        ArrayList<Message> messages = messageList.getMessages();
         Iterator<String> emailIterator = emails.iterator();
 
         for(int i = 0; i < nbGroup; ++i) {
@@ -46,11 +46,11 @@ public class Group {
         this.recipients.add(recipient);
     }
 
-    public void setMessage(String message) {
+    public void setMessage(Message message) {
         this.message = message;
     }
 
-    public String getMessage() {
+    public Message getMessage() {
         return message;
     }
 
