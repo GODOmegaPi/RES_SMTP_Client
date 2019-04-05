@@ -61,8 +61,7 @@ public class Spam {
             client.sendMessage("QUIT");
             client.stopConnection();
 
-        } catch (
-                IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
