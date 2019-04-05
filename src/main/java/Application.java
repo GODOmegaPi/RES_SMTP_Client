@@ -11,6 +11,7 @@ public class Application {
         receivers.add("receiver4@gmail.com");
 
         Spam spam = new Spam("smtp.mailtrap.io", 2525, "sender@gmail.com", receivers, "Test Spam", "This is a test email spam.");
+        spam.setAuthInfos("MTUzOGIyMTliNzUxNjM=", "ODY2ODk0ODY3ZjIwMDY=");
         spam.start();
     }
 }
