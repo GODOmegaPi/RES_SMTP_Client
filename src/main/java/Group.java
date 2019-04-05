@@ -5,7 +5,7 @@ import java.util.Iterator;
 public class Group {
     private String message;
     private String sender;
-    private ArrayList<String> recipients = new ArrayList<>();
+    private ArrayList<String> recipients = new ArrayList<String>();
 
     public static ArrayList<Group> createGroups(int nbGroup, EmailList emailList, MessageList messageList) {
         ArrayList<Group> groups = new ArrayList<Group>();

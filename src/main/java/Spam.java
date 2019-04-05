@@ -4,10 +4,7 @@ import java.util.ArrayList;
 public class Spam {
     private String hostname;
     private int port;
-    private String sender;
-    private ArrayList<String> receivers;
-    private String title;
-    private String message;
+    private Group group;
 
     private boolean useAuth;
     private String authLogin;
@@ -15,13 +12,10 @@ public class Spam {
 
     private final int DELAY = 5000;
 
-    public Spam(String hostname, int port, String sender, ArrayList<String> receivers, String title, String message) {
+    public Spam(String hostname, int port, Group group) {
         this.hostname = hostname;
         this.port = port;
-        this.sender = sender;
-        this.receivers = receivers;
-        this.title = title;
-        this.message = message;
+        this.group = group;
         this.useAuth = false;
     }
 
@@ -38,21 +32,21 @@ public class Spam {
             client.startConnection(this.hostname, this.port);
             client.sendMessage("EHLO " + this.hostname);
 
-            for (String to : receivers) {
+            for (String to : this.group.getRecipients()) {
                 if (this.useAuth) {
                     client.sendMessage("AUTH LOGIN");
                     client.sendMessage(this.authLogin);
                     client.sendMessage(this.authPassword);
                 }
 
-                client.sendMessage("MAIL FROM: <" + this.sender + ">");
+                client.sendMessage("MAIL FROM: <" + this.group.getSender() + ">");
                 client.sendMessage("RCPT TO: <" + to + ">");
                 client.sendMessage("DATA");
                 client.sendMessage("To: " + to + "\n" +
-                        "From: " + this.sender + "\n" +
-                        "Subject: " + this.title + "\n" +
+                        "From: " + this.group.getMessage() + "\n" +
+                        "Subject: " + this.group.getMessage().split(System.getProperty("newline"))[0] + "\n" +
                         "\n" +
-                        this.message + "\n" +
+                        this.group.getMessage() + "\n" +
                         ".");
 
                 System.out.println("Message sent to: " + to);
