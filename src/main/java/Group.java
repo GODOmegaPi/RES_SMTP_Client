@@ -62,7 +62,7 @@ public class Group {
             result += it.next() + "\n";
         }
 
-        result += "\nMessage :\n" + message;
+        result += "\nTitle :\n" + message.getTitle() + "\n\nMessage :\n" + message.getContent();
 
         return result;
     }
