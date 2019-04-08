@@ -2,10 +2,16 @@ import java.util.ArrayList;
 
 public class Application {
     public static void main(String[] args) {
-        String emailsPath   = "emails.txt";
-        String messagesPath = "messages.txt";
+        private static final String EMAILS_PATH = "emails.txt";
+        private static final String MESSAGES_PATH = "messages.txt";
+        private static final String SERVER_IP = "127.0.0.1";
+        private static final int SERVER_PORT = 2525;
 
-        EmailList emailList = new EmailList(emailsPath);
+        private static final boolean USE_AUTH = false;
+        private static final String AUTH_LOGIN = "";
+        private static final String AUTH_PASSWORD = "";
+      
+        EmailList emailList = new EmailList(EMAILS_PATH);
 
         int groupNb = Integer.parseInt(args[0]);
         int emailListSize = emailList.getEmails().size();
@@ -17,14 +23,16 @@ public class Application {
             return;
         }
       
-        ArrayList<Group> groups = Group.createGroups(groupNb, new EmailList(emailsPath), new MessageList(messagesPath));
+        ArrayList<Group> groups = Group.createGroups(groupNb, new EmailList(EMAILS_PATH), new MessageList(MESSAGES_PATH));
 
         System.out.println("Les groupes :");
         System.out.println(groups);
 
         for(Group group : groups) {
-            Spam spam = new Spam("smtp.mailtrap.io", 2525, group);
-            spam.setAuthInfos("MTUzOGIyMTliNzUxNjM=", "ODY2ODk0ODY3ZjIwMDY=");
+            Spam spam = new Spam(SERVER_IP, SERVER_PORT, group);
+            if(USE_AUTH) {
+                spam.setAuthInfos(AUTH_LOGIN, AUTH_PASSWORD);
+            }
             spam.start();
         }
     }
