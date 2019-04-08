@@ -1,5 +1,4 @@
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class Spam {
     private String hostname;
@@ -19,7 +18,7 @@ public class Spam {
         this.useAuth = false;
     }
 
-    public void setAuthInfos(String authLogin, String authPassword){
+    public void setAuthInfos(String authLogin, String authPassword) {
         this.useAuth = true;
         this.authLogin = authLogin;
         this.authPassword = authPassword;
@@ -43,11 +42,11 @@ public class Spam {
                 client.sendMessage("RCPT TO: <" + to + ">");
                 client.sendMessage("DATA");
                 client.sendMessage("To: " + to + "\n" +
-                        "From: " + this.group.getMessage() + "\n" +
+                        "From: " + this.group.getSender() + "\n" +
                         "Subject: " + this.group.getMessage().getTitle() + "\n" +
                         "\n" +
-                        this.group.getMessage().getContent() + "\n" +
-                        ".");
+                        this.group.getMessage().getContent() +
+                        "\r\n.");
 
                 System.out.println("Message sent to: " + to);
 
@@ -60,7 +59,6 @@ public class Spam {
 
             client.sendMessage("QUIT");
             client.stopConnection();
-
         } catch (IOException e) {
             e.printStackTrace();
         }

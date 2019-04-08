@@ -1,6 +1,4 @@
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Application {
     public static void main(String[] args){
@@ -18,8 +16,6 @@ public class Application {
             System.out.println("Please, specify a number of group leaving at least 3 emails by groups");
             return;
         }
-
-
       
         ArrayList<Group> groups = Group.createGroups(groupNb, new EmailList(emailsPath), new MessageList(messagesPath));
 
@@ -27,8 +23,8 @@ public class Application {
         System.out.println(groups);
 
         for(Group group : groups) {
-            Spam spam = new Spam("smtp.mailtrap.io", 2525, group);
-            spam.setAuthInfos("MTUzOGIyMTliNzUxNjM=", "ODY2ODk0ODY3ZjIwMDY=");
+            Spam spam = new Spam("127.0.0.1", 2525, group);
+            //spam.setAuthInfos("MTUzOGIyMTliNzUxNjM=", "ODY2ODk0ODY3ZjIwMDY=");
             spam.start();
         }
     }
