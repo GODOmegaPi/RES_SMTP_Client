@@ -1,11 +1,9 @@
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Application {
-    public static void main(String[] args){
-        String emailsPath = "emailsExample.txt";
-        String messagesPath = "messagesExample.txt";
+    public static void main(String[] args) {
+        String emailsPath   = "emails.txt";
+        String messagesPath = "messages.txt";
 
         EmailList emailList = new EmailList(emailsPath);
 
@@ -18,8 +16,6 @@ public class Application {
             System.out.println("Please, specify a number of group leaving at least 3 emails by groups");
             return;
         }
-
-
       
         ArrayList<Group> groups = Group.createGroups(groupNb, new EmailList(emailsPath), new MessageList(messagesPath));
 

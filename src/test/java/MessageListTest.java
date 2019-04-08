@@ -8,7 +8,7 @@ public class MessageListTest {
 
     @Test
     public void loadMessageList() {
-        String configPath = "messagesExample.txt";
+        String configPath = "src/test/resources/messagesExample.txt";
         ArrayList<String> expected  = new ArrayList<String>();
         MessageList messageList =  new MessageList(configPath);
         assertEquals(3, messageList.getMessages().size());

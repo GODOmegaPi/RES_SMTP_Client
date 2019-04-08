@@ -8,7 +8,7 @@ public class EmailListTest {
 
     @Test
     public void loadEmailList() {
-        String configPath = "emailsExample.txt";
+        String configPath = "src/test/resources/emailsExample.txt";
         ArrayList<String> expected  = new ArrayList<String>();
         EmailList emailList =  new EmailList(configPath);
         assertEquals(39, emailList.getEmails().size());

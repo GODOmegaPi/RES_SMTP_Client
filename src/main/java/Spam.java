@@ -43,10 +43,10 @@ public class Spam {
                 client.sendMessage("RCPT TO: <" + to + ">");
                 client.sendMessage("DATA");
                 client.sendMessage("To: " + to + "\n" +
-                        "From: " + this.group.getMessage() + "\n" +
+                        "From: " + this.group.getSender() + "\n" +
                         "Subject: " + this.group.getMessage().getTitle() + "\n" +
                         "\n" +
-                        this.group.getMessage().getContent() + "\n" +
+                        this.group.getMessage().getContent() + "\r\n" +
                         ".");
 
                 System.out.println("Message sent to: " + to);
