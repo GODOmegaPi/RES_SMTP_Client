@@ -60,7 +60,7 @@ java -jar RES_SMTP_Client-1.0-SNAPSHOT.jar 10
 
 ### MockMock
 You can build a new image of MockMock using the DockerFile in the MockMock folder.
-Start by going into the MockMock folder and use the following command.
+Start by going into the MockMock folder and use the following command:
 
 ```
 docker build . -t mockmockserver
