@@ -57,3 +57,17 @@ Example :
 ```
 java -jar RES_SMTP_Client-1.0-SNAPSHOT.jar 10
 ```
+
+### MockMock
+You can build a new image of MockMock using the DockerFile in the MockMock folder.
+Start by going into the MockMock folder and use the following command.
+
+```
+docker build . -t mockmockserver
+```
+
+Once this is done, you can start the server by using:
+
+```
+docker run -p 2525:2525 -p 8080:8080 mockmockmerver
+```
