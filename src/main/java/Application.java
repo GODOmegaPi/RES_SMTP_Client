@@ -1,16 +1,16 @@
 import java.util.ArrayList;
 
 public class Application {
-    public static void main(String[] args) {
-        private static final String EMAILS_PATH = "emails.txt";
-        private static final String MESSAGES_PATH = "messages.txt";
-        private static final String SERVER_IP = "127.0.0.1";
-        private static final int SERVER_PORT = 2525;
+    private static final String EMAILS_PATH = "emails.txt";
+    private static final String MESSAGES_PATH = "messages.txt";
+    private static final String SERVER_IP = "127.0.0.1";
+    private static final int SERVER_PORT = 2525;
 
-        private static final boolean USE_AUTH = false;
-        private static final String AUTH_LOGIN = "";
-        private static final String AUTH_PASSWORD = "";
-      
+    private static final boolean USE_AUTH = false;
+    private static final String AUTH_LOGIN = "";
+    private static final String AUTH_PASSWORD = "";
+
+    public static void main(String[] args) {
         EmailList emailList = new EmailList(EMAILS_PATH);
 
         int groupNb = Integer.parseInt(args[0]);
