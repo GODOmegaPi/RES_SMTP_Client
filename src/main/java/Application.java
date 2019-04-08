@@ -1,20 +1,17 @@
 import java.util.ArrayList;
 
 public class Application {
-    private static final String EMAILS_PATH = "emailsExample.txt";
-    private static final String MESSAGES_PATH = "messagesExample.txt";
-    private static final String SERVER_IP = "127.0.0.1";
-    private static final int SERVER_PORT = 2525;
+    public static void main(String[] args) {
+        private static final String EMAILS_PATH = "emails.txt";
+        private static final String MESSAGES_PATH = "messages.txt";
+        private static final String SERVER_IP = "127.0.0.1";
+        private static final int SERVER_PORT = 2525;
 
-    private static final boolean USE_AUTH = false;
-    private static final String AUTH_LOGIN = "";
-    private static final String AUTH_PASSWORD = "";
-
-    public static void main(String[] args){
-        String emailsPath = EMAILS_PATH;
-        String messagesPath = MESSAGES_PATH;
-
-        EmailList emailList = new EmailList(emailsPath);
+        private static final boolean USE_AUTH = false;
+        private static final String AUTH_LOGIN = "";
+        private static final String AUTH_PASSWORD = "";
+      
+        EmailList emailList = new EmailList(EMAILS_PATH);
 
         int groupNb = Integer.parseInt(args[0]);
         int emailListSize = emailList.getEmails().size();
@@ -26,7 +23,7 @@ public class Application {
             return;
         }
       
-        ArrayList<Group> groups = Group.createGroups(groupNb, new EmailList(emailsPath), new MessageList(messagesPath));
+        ArrayList<Group> groups = Group.createGroups(groupNb, new EmailList(EMAILS_PATH), new MessageList(MESSAGES_PATH));
 
         System.out.println("Les groupes :");
         System.out.println(groups);

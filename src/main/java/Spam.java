@@ -45,6 +45,7 @@ public class Spam {
                         "From: " + this.group.getSender() + "\n" +
                         "Subject: " + this.group.getMessage().getTitle() + "\n" +
                         "\n" +
+
                         this.group.getMessage().getContent() +
                         "\r\n.");
 

@@ -5,14 +5,8 @@ public class MessageList {
     private ArrayList<Message> messageList = new ArrayList<Message>();
 
     public MessageList(String path) {
-        File file = new File(path);
-        BufferedReader br = null;
-
-        try {
-            br = new BufferedReader(new FileReader(file));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        };
+        InputStream in = MessageList.class.getResourceAsStream("/" + path);
+        BufferedReader br = new BufferedReader(new InputStreamReader(in));
 
         String message = "";
         String line = "";
