@@ -8,8 +8,8 @@ public class GroupTest {
 
     @Test
     public void groups() {
-        EmailList emailList = new EmailList("src/test/resources/emailsExample.txt");
-        MessageList messageList = new MessageList("src/test/resources/messagesExample.txt");
+        EmailList emailList = new EmailList("emailsExample.txt");
+        MessageList messageList = new MessageList("messagesExample.txt");
         ArrayList<Group> groups = Group.createGroups(10, emailList, messageList);
 
         for(Group group : groups) {
