@@ -69,5 +69,5 @@ docker build . -t mockmockserver
 Once this is done, you can start the server by using:
 
 ```
-docker run -p 2525:2525 -p 8080:8080 mockmockmerver
+docker run -p 2525:2525 -p 8080:8080 mockmockserver
 ```
