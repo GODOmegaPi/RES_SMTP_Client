@@ -1,10 +1,16 @@
 # RES_SMTP_Client
 
-## Installation
-You need to clone the git repository :
+## Building application
+You first need to clone the git repository :
 
 ```sh
 git clone git@github.com:SoftEng-HEIGVD/Teaching-HEIGVD-RES-2019-Labo-SMTP.git 
+```
+
+Make sure you have a working Maven installation and make the java jar with :
+
+```sh
+mvn package
 ```
 
 ## Configuration
@@ -22,10 +28,10 @@ jerome.bagnoud@heig-vd.ch
 mickael.bonjour@heig-vd.ch
 ```
 
-Please check emailsExample.txt to see a more thorough example.
+Please check */src/test/resources/emailsExample.txt* to see a more thorough example.
 
 ### Messages
-Messages to send are defined in *messagesExample.txt* file.
+Messages to send are defined in *messages.txt* file.
 
 You must provide a list of messages in this file.
 
@@ -41,7 +47,7 @@ Lorem ipsum ?!
 ---
 ```
 
-Please check *messagesExample.txt* to see a more thorough example.
+Please check */src/test/resources/messagesExample.txt* to see a more thorough example.
 
 ### Groups
 Groups are generated based on your email list. You just need to specify the quantity of group by running the app with the number of group in argument.
