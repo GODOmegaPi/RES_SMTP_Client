@@ -44,9 +44,9 @@ public class Spam {
                 client.sendMessage("DATA");
                 client.sendMessage("To: " + to + "\n" +
                         "From: " + this.group.getMessage() + "\n" +
-                        "Subject: " + this.group.getMessage().split(System.getProperty("newline"))[0] + "\n" +
+                        "Subject: " + this.group.getMessage().getTitle() + "\n" +
                         "\n" +
-                        this.group.getMessage() + "\n" +
+                        this.group.getMessage().getContent() + "\n" +
                         ".");
 
                 System.out.println("Message sent to: " + to);
@@ -61,8 +61,7 @@ public class Spam {
             client.sendMessage("QUIT");
             client.stopConnection();
 
-        } catch (
-                IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
