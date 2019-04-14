@@ -21,32 +21,32 @@ git clone git@github.com:SoftEng-HEIGVD/Teaching-HEIGVD-RES-2019-Labo-SMTP.git
 You can change the parameters of the application in the class `Application` like this:
 
 ```
-    // put the path to the file containing a list of emails
-    EMAILS_PATH
+// put the path to the file containing a list of emails
+EMAILS_PATH
 ```
 ```
-    // put the path to the file containing a list of messages
-    MESSAGES_PATH
+// put the path to the file containing a list of messages
+MESSAGES_PATH
 ```
 ```
-    // put the IP address of your SMTP Server
-    SERVER_IP
+// put the IP address of your SMTP Server
+SERVER_IP
 ```
 ```
-    // put the path to the file containing a list of emails
-    SERVER_PORT = 25000;
+// put the path to the file containing a list of emails
+SERVER_PORT = 25000;
 ```
 ```
-    // if you need to login to a SMTP server, put USE_AUTH to true
-    USE_AUTH
+// if you need to login to a SMTP server, put USE_AUTH to true
+USE_AUTH
 ```
 ```
-    // put your plain text username here
-    AUTH_LOGIN
+// put your plain text username here
+AUTH_LOGIN
 ```
 ```
-    // put your plain text password here
-    AUTH_PASSWORD
+// put your plain text password here
+AUTH_PASSWORD
 ```
 
 Make sure you have a working Maven installation and make the java jar with :
