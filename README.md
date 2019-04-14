@@ -33,8 +33,8 @@ MESSAGES_PATH
 SERVER_IP
 ```
 ```
-// put the path to the file containing a list of emails
-SERVER_PORT = 25000;
+// put the port of your SMTP Server
+SERVER_PORT
 ```
 ```
 // if you need to login to a SMTP server, put USE_AUTH to true
