@@ -18,6 +18,37 @@ You first need to clone the git repository :
 git clone git@github.com:SoftEng-HEIGVD/Teaching-HEIGVD-RES-2019-Labo-SMTP.git 
 ```
 
+You can change the parameters of the application in the class `Application` like this:
+
+```
+    // put the path to the file containing a list of emails
+    EMAILS_PATH
+```
+```
+    // put the path to the file containing a list of messages
+    MESSAGES_PATH
+```
+```
+    // put the IP address of your SMTP Server
+    SERVER_IP
+```
+```
+    // put the path to the file containing a list of emails
+    SERVER_PORT = 25000;
+```
+```
+    // if you need to login to a SMTP server, put USE_AUTH to true
+    USE_AUTH
+```
+```
+    // put your plain text username here
+    AUTH_LOGIN
+```
+```
+    // put your plain text password here
+    AUTH_PASSWORD
+```
+
 Make sure you have a working Maven installation and make the java jar with :
 
 ```sh
@@ -36,13 +67,13 @@ How to set it up ?
 You can build a new image of MockMock using the DockerFile in the MockMock folder.
 Start by going into the MockMock folder and use the following command:
 
-```
+```sh
 docker build . -t mockmockserver
 ```
 
 Once this is done, you can start the server by using:
 
-```
+```sh
 docker run -p 2525:2525 -p 8080:8080 mockmockserver
 ```
 
