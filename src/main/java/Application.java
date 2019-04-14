@@ -1,10 +1,11 @@
 import java.util.ArrayList;
+import java.util.Base64;
 
 public class Application {
     private static final String EMAILS_PATH = "emails.txt";
     private static final String MESSAGES_PATH = "messages.txt";
-    private static final String SERVER_IP = "127.0.0.1";
-    private static final int SERVER_PORT = 2525;
+    private static final String SERVER_IP = "localhost";
+    private static final int SERVER_PORT = 25000;
 
     private static final boolean USE_AUTH = false;
     private static final String AUTH_LOGIN = "";
@@ -31,7 +32,7 @@ public class Application {
         for(Group group : groups) {
             Spam spam = new Spam(SERVER_IP, SERVER_PORT, group);
             if(USE_AUTH) {
-                spam.setAuthInfos(AUTH_LOGIN, AUTH_PASSWORD);
+                spam.setAuthInfos(Base64.getEncoder().encodeToString(AUTH_LOGIN.getBytes()), Base64.getEncoder().encodeToString(AUTH_PASSWORD.getBytes()));
             }
             spam.start();
         }

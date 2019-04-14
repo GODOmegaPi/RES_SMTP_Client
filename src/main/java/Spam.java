@@ -41,11 +41,10 @@ public class Spam {
                 client.sendMessage("MAIL FROM: <" + this.group.getSender() + ">");
                 client.sendMessage("RCPT TO: <" + to + ">");
                 client.sendMessage("DATA");
-                client.sendMessage("To: " + to + "\n" +
-                        "From: " + this.group.getSender() + "\n" +
-                        "Subject: " + this.group.getMessage().getTitle() + "\n" +
-                        "\n" +
-
+                client.sendMessage("To: " + to + "\r\n" +
+                        "From: " + this.group.getSender() + "\r\n" +
+                        "Subject: " + this.group.getMessage().getTitle() + "\r\n" +
+                        "Content-Type: text/plain; charset=UTF-8\r\n" +
                         this.group.getMessage().getContent() +
                         "\r\n.");
 
